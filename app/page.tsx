@@ -84,7 +84,6 @@ const gritOptions = [
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedManufacturer, setSelectedManufacturer] = useState("");
 
   const [selectedMachines, setSelectedMachines] = useState<string[]>([]);
 
@@ -106,7 +105,6 @@ const Home = () => {
   // Function to reset all filters to their initial states
   const resetFilters = () => {
     setSearchTerm("");
-    setSelectedManufacturer("");
     setSelectedMachines([]);
     setSelectedMaterials([]);
     setIsWetGrinding(false);
@@ -126,7 +124,6 @@ const Home = () => {
   };
 
   const handleManufacturerSelect = (manufacturer: string) => {
-    setSelectedManufacturer(manufacturer);
     setSearchTerm(manufacturer);
     setIsDropdownOpen(false);
   };
